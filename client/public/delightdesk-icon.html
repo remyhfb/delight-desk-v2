@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DelightDesk Icon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 20px; 
+            background: white; 
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .logo-showcase {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo-size {
+            text-align: center;
+            margin: 10px;
+        }
+        .logo-size h3 {
+            margin: 10px 0 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>DelightDesk Icon - Exact Current Logo</h1>
+    <p>Right-click any icon below to save as image for your marketing use.</p>
+    
+    <div class="logo-showcase">
+        <!-- 32x32 - Same as current app -->
+        <div class="logo-size">
+            <h3>32×32 (Current Size)</h3>
+            <div class="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center">
+                <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+            </div>
+        </div>
+        
+        <!-- 64x64 - 2x scale -->
+        <div class="logo-size">
+            <h3>64×64 (2x Scale)</h3>
+            <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center">
+                <i data-lucide="zap" class="w-10 h-10 text-white"></i>
+            </div>
+        </div>
+        
+        <!-- 128x128 - 4x scale -->
+        <div class="logo-size">
+            <h3>128×128 (4x Scale)</h3>
+            <div class="w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center">
+                <i data-lucide="zap" class="w-20 h-20 text-white"></i>
+            </div>
+        </div>
+        
+        <!-- 256x256 - 8x scale -->
+        <div class="logo-size">
+            <h3>256×256 (8x Scale)</h3>
+            <div style="width: 256px; height: 256px;" class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center">
+                <i data-lucide="zap" style="width: 160px; height: 160px;" class="text-white"></i>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+    
+    <hr style="margin: 40px 0;">
+    <h2>Instructions:</h2>
+    <ol>
+        <li>Right-click on any logo size above</li>
+        <li>Select "Save image as..." or "Copy image"</li>
+        <li>Save as PNG for your marketing materials</li>
+    </ol>
+    <p><strong>This is your exact current logo</strong> - purple-to-pink gradient with white Zap icon from Lucide.</p>
+</body>
+</html>
