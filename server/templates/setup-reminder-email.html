@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Delight Desk Setup</title>
+    <style>
+        /* Stripe-inspired design system */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #f6f9fc;
+        }
+        
+        /* Container using tables for email client compatibility */
+        .email-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 32px;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 48px;
+            height: 48px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 8px 0 0;
+            font-size: 16px;
+        }
+        
+        /* Content sections */
+        .content {
+            padding: 48px 32px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0 0 16px;
+            letter-spacing: -0.3px;
+        }
+        
+        .section-description {
+            font-size: 16px;
+            color: #525f7f;
+            margin: 0 0 24px;
+            line-height: 1.5;
+        }
+        
+        /* Progress indicator */
+        .progress-container {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .progress-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0 0 16px;
+        }
+        
+        .progress-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 14px;
+            color: #525f7f;
+        }
+        
+        .step-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .step-complete {
+            background: #10b981;
+            color: white;
+        }
+        
+        .step-pending {
+            background: #e2e8f0;
+            color: #64748b;
+        }
+        
+        /* Buttons */
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+        
+        .button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Stats box */
+        .stats-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #0ea5e9;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        
+        .stats-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0369a1;
+            margin: 0 0 8px;
+        }
+        
+        .stats-text {
+            font-size: 14px;
+            color: #0369a1;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #f6f9fc;
+            padding: 32px;
+            text-align: center;
+            border-top: 1px solid #e6ebf1;
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            color: #8898aa;
+            margin: 0 0 16px;
+        }
+        
+        .footer-links {
+            margin: 16px 0 0;
+        }
+        
+        .footer-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 0 16px;
+        }
+        
+        /* Mobile responsiveness */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+            
+            .header {
+                padding: 32px 24px;
+            }
+            
+            .content {
+                padding: 32px 24px;
+            }
+            
+            .footer {
+                padding: 24px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td align="center" style="background-color: #f6f9fc; padding: 40px 20px;">
+                <table class="email-container" cellpadding="0" cellspacing="0" border="0">
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <h1>Your AI is waiting{{firstName}}</h1>
+                            <p>6 days left in your free trial - Complete setup now</p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="content">
+                            <div class="section">
+                                <p class="section-description">{{greeting}}</p>
+                                <p class="section-description">You're just steps away from automating 80% of your customer service emails. With only 6 days left in your free trial, let's get your AI assistant up and running!</p>
+                                
+                                <div class="stats-box">
+                                    <div class="stats-number">15+ hours</div>
+                                    <div class="stats-text">saved per week by businesses using Delight Desk</div>
+                                </div>
+                            </div>
+                            
+                            <div class="section">
+                                <h2 class="section-title">Complete your setup</h2>
+                                <p class="section-description">You're missing: {{missingSteps}}</p>
+                                
+                                <div class="progress-container">
+                                    <div class="progress-title">Your Setup Progress</div>
+                                    <ul class="progress-steps">
+                                        <li class="progress-step">
+                                            <span class="step-icon step-complete">✓</span>
+                                            <span>Account created</span>
+                                        </li>
+                                        <li class="progress-step">
+                                            <span class="step-icon step-pending">2</span>
+                                            <span>Connect Email & Store</span>
+                                        </li>
+                                        <li class="progress-step">
+                                            <span class="step-icon step-pending">3</span>
+                                            <span>Train Your AI</span>
+                                        </li>
+                                        <li class="progress-step">
+                                            <span class="step-icon step-pending">4</span>
+                                            <span>Enable Automations</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="section">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td align="center" style="padding: 24px 0;">
+                                            <a href="https://delightdesk.io/connections" class="button">Complete Setup Now</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <div class="section">
+                                <h2 class="section-title">What you're missing out on</h2>
+                                <p class="section-description">Every day without automation means:</p>
+                                
+                                <ul style="color: #525f7f; padding-left: 20px;">
+                                    <li style="margin-bottom: 8px;">Hours spent on repetitive customer emails</li>
+                                    <li style="margin-bottom: 8px;">Slower response times frustrating customers</li>
+                                    <li style="margin-bottom: 8px;">Missing the chance to delight customers instantly</li>
+                                    <li style="margin-bottom: 8px;">Your competitors getting ahead with AI automation</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <p style="margin: 0 0 16px; font-size: 14px; color: #1a1a1a; font-weight: 600;">
+                                <strong>Delight Desk</strong>
+                            </p>
+                            <p class="footer-text">Need help? We're here to get you set up in minutes.</p>
+                            <div class="footer-links">
+                                <a href="https://delightdesk.io/support" class="footer-link">Help Center</a>
+                            </div>
+                            <p class="footer-text" style="margin-top: 24px; font-size: 12px;">
+                                You're receiving setup reminders because you started a free trial with Delight Desk.<br>
+                                <a href="{{unsubscribeUrl}}" style="color: #667eea;">Unsubscribe</a> | 
+                                <a href="{{preferencesUrl}}" style="color: #667eea;">Email Preferences</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
