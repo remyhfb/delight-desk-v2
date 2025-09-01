@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Limit Reached - Delight Desk</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f1f3f4;
+            padding-bottom: 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+        
+        .alert-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .title {
+            color: #dc3545;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .alert-box {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .usage-summary {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .usage-bar {
+            background-color: #e9ecef;
+            border-radius: 10px;
+            height: 20px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .usage-fill-full {
+            background-color: #dc3545;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .upgrade-section {
+            background-color: #d1ecf1;
+            border: 1px solid #17a2b8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #1a73e8;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 10px 5px;
+        }
+        
+        .cta-button:hover {
+            background-color: #1557b0;
+        }
+        
+        .cta-button.secondary {
+            background-color: #6c757d;
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: #545b62;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Delight Desk</div>
+            <div class="alert-icon">🚨</div>
+            <div class="title">API Limit Reached</div>
+        </div>
+        
+        <p>Hi {{userName}},</p>
+        
+        <div class="alert-box">
+            <p><strong>Service Temporarily Paused</strong></p>
+            <p>Your {{service}} API service has been temporarily paused because you've reached your {{limitType}} limit on the <strong>{{currentPlan}}</strong> plan.</p>
+        </div>
+        
+        <div class="usage-summary">
+            <h3>Usage Summary:</h3>
+            {{#if (eq limitType "daily")}}
+            <p><strong>Daily:</strong> {{dailyCount}} / {{dailyLimit}} calls (LIMIT REACHED)</p>
+            <div class="usage-bar">
+                <div class="usage-fill-full"></div>
+            </div>
+            <p><em>Service will automatically resume tomorrow.</em></p>
+            {{else}}
+            <p><strong>Monthly:</strong> {{monthlyCount}} / {{monthlyLimit}} calls (LIMIT REACHED)</p>
+            <div class="usage-bar">
+                <div class="usage-fill-full"></div>
+            </div>
+            <p><em>Service will automatically resume next month.</em></p>
+            {{/if}}
+        </div>
+        
+        <h3>What happens now?</h3>
+        <ul>
+            <li>All {{service}} API calls are temporarily paused</li>
+            <li>Your other services continue to work normally</li>
+            <li>{{#if (eq limitType "daily")}}Service resumes automatically tomorrow{{else}}Service resumes automatically next month{{/if}}</li>
+            <li>You can upgrade anytime to restore service immediately</li>
+        </ul>
+        
+        <div class="upgrade-section">
+            <h3>🚀 Restore Service Immediately</h3>
+            <p>{{upgradeText}}</p>
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="{{upgradeUrl}}" class="cta-button">Upgrade Now</a>
+                <a href="{{settingsUrl}}" class="cta-button secondary">View Usage Details</a>
+            </div>
+        </div>
+        
+        <p>Need help choosing the right plan? We're here to assist!</p>
+        
+        <div class="footer">
+            <p>Best regards,<br>The Delight Desk Team</p>
+            <p>
+                <a href="{{unsubscribeUrl}}">Unsubscribe</a> | 
+                <a href="mailto:support@delightdesk.io">Contact Support</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
