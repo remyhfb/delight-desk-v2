@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Usage Warning - Delight Desk</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f1f3f4;
+            padding-bottom: 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+        
+        .warning-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .title {
+            color: #ea4335;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .usage-summary {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .usage-bar {
+            background-color: #e9ecef;
+            border-radius: 10px;
+            height: 20px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .usage-fill {
+            background-color: #ffc107;
+            height: 100%;
+            border-radius: 10px;
+        }
+        
+        .upgrade-section {
+            background-color: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #1a73e8;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .cta-button:hover {
+            background-color: #1557b0;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Delight Desk</div>
+            <div class="warning-icon">⚠️</div>
+            <div class="title">API Usage Warning</div>
+        </div>
+        
+        <p>Hi {{userName}},</p>
+        
+        <p>You've reached <strong>90%</strong> of your {{service}} API {{limitType}} limit on your <strong>{{currentPlan}}</strong> plan.</p>
+        
+        <div class="usage-summary">
+            <h3>Current Usage:</h3>
+            {{#if (eq limitType "daily")}}
+            <p><strong>Daily:</strong> {{dailyCount}} / {{dailyLimit}} calls</p>
+            <div class="usage-bar">
+                <div class="usage-fill" style="width: {{percentage dailyCount dailyLimit}}%"></div>
+            </div>
+            {{else}}
+            <p><strong>Monthly:</strong> {{monthlyCount}} / {{monthlyLimit}} calls</p>
+            <div class="usage-bar">
+                <div class="usage-fill" style="width: {{percentage monthlyCount monthlyLimit}}%"></div>
+            </div>
+            {{/if}}
+        </div>
+        
+        <p>To avoid service interruptions, consider:</p>
+        <ul>
+            <li>Monitoring your usage throughout the day/month</li>
+            <li>Upgrading to a higher plan for more API calls</li>
+            <li>Optimizing your automation rules to reduce API usage</li>
+        </ul>
+        
+        <div class="upgrade-section">
+            <h3>💡 Upgrade Recommendation</h3>
+            <p>{{upgradeText}}</p>
+            <a href="{{upgradeUrl}}" class="cta-button">Upgrade Plan</a>
+        </div>
+        
+        <p>Questions? We're here to help!</p>
+        
+        <div class="footer">
+            <p>Best regards,<br>The Delight Desk Team</p>
+            <p>
+                <a href="{{unsubscribeUrl}}">Unsubscribe</a> | 
+                <a href="mailto:support@delightdesk.io">Contact Support</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
