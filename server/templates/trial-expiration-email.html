@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <title>{{trialDaysRemaining}} Days Left in Your Free Trial - Choose Your Plan</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    /* Reset styles */
+    body, table, td, p, a, li, blockquote {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    table, td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    img {
+      -ms-interpolation-mode: bicubic;
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+    
+    /* Base styles */
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #f8fafc;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    /* Container */
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+    
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 32px 40px;
+      text-align: center;
+    }
+    
+    .logo {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .logo {
+      display: none;
+    }
+    
+    .header h1 {
+      color: #ffffff;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+    }
+    
+    /* Content */
+    .content {
+      padding: 40px;
+    }
+    
+    .trial-status {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid #f59e0b;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    
+    .trial-status .days-remaining {
+      font-size: 36px;
+      font-weight: 700;
+      color: #d97706;
+      margin: 0 0 8px 0;
+    }
+    
+    .trial-status .trial-text {
+      font-size: 16px;
+      color: #92400e;
+      margin: 0;
+      font-weight: 500;
+    }
+    
+    .greeting {
+      font-size: 18px;
+      color: #374151;
+      margin: 0 0 24px 0;
+      line-height: 1.6;
+    }
+    
+    .value-prop {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    
+    .value-prop h3 {
+      color: #1f2937;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 16px 0;
+    }
+    
+    .benefit {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .benefit:last-child {
+      margin-bottom: 0;
+    }
+    
+    .benefit::before {
+      content: "✅";
+      margin-right: 12px;
+      font-size: 16px;
+    }
+    
+    .benefit-text {
+      color: #4b5563;
+      font-size: 16px;
+      margin: 0;
+    }
+    
+    /* Plans section */
+    .plans-section {
+      margin: 32px 0;
+    }
+    
+    .plans-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    
+    .plans-header h3 {
+      color: #1f2937;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+    }
+    
+    .plans-header p {
+      color: #6b7280;
+      font-size: 16px;
+      margin: 0;
+    }
+    
+    .plan {
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      transition: all 0.2s;
+    }
+    
+    .plan.popular {
+      border-color: #8b5cf6;
+      background: linear-gradient(135deg, #f3e8ff 0%, #e0e7ff 100%);
+      position: relative;
+    }
+    
+    .plan.popular::before {
+      content: "Most Popular";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #8b5cf6;
+      color: white;
+      padding: 4px 16px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .plan-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    
+    .plan-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1f2937;
+      margin: 0;
+    }
+    
+    .plan-price {
+      font-size: 24px;
+      font-weight: 700;
+      color: #8b5cf6;
+      margin: 0;
+    }
+    
+    .plan-features {
+      color: #6b7280;
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      margin: 40px 0;
+      padding: 32px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 16px;
+    }
+    
+    .cta-text {
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 24px 0;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: #ffffff;
+      color: #667eea;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+    
+    .cta-button:hover {
+      background: #f8fafc;
+      transform: translateY(-1px);
+    }
+    
+    /* Footer */
+    .footer {
+      background: #f9fafb;
+      padding: 32px 40px;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    .footer p {
+      color: #6b7280;
+      font-size: 14px;
+      margin: 0 0 8px 0;
+      line-height: 1.5;
+    }
+    
+    .footer-links {
+      margin-top: 16px;
+    }
+    
+    .footer-links a {
+      color: #8b5cf6;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+    
+    /* Mobile responsive */
+    @media screen and (max-width: 600px) {
+      .content {
+        padding: 24px !important;
+      }
+      
+      .header {
+        padding: 24px !important;
+      }
+      
+      .header h1 {
+        font-size: 24px !important;
+      }
+      
+      .trial-status .days-remaining {
+        font-size: 28px !important;
+      }
+      
+      .plan {
+        padding: 16px !important;
+      }
+      
+      .cta-section {
+        padding: 24px !important;
+      }
+      
+      .footer {
+        padding: 24px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Your Trial Expires Soon</h1>
+    </div>
+    
+    <!-- Content -->
+    <div class="content">
+      <div class="trial-status">
+        <div class="days-remaining">{{trialDaysRemaining}} Days Left!</div>
+        <p class="trial-text">Remaining in your free trial</p>
+      </div>
+      
+      <p class="greeting">Hi {{firstName}},</p>
+      
+      <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 24px 0;">
+        Your free trial has {{trialDaysRemaining}} days remaining. Don't lose access to the customer service automation that's saving businesses <strong>15+ hours per week</strong> and <strong>thousands in operational costs</strong>.
+      </p>
+      
+      <div class="value-prop">
+        <h3>What you'll lose without a plan:</h3>
+        <div class="benefit">
+          <p class="benefit-text"><strong>80% automation</strong> of routine customer inquiries</p>
+        </div>
+        <div class="benefit">
+          <p class="benefit-text"><strong>15+ hours saved</strong> weekly on customer service</p>
+        </div>
+        <div class="benefit">
+          <p class="benefit-text"><strong>24/7 AI responses</strong> while you sleep</p>
+        </div>
+        <div class="benefit">
+          <p class="benefit-text"><strong>Smart order lookup</strong> and instant refund processing</p>
+        </div>
+        <div class="benefit">
+          <p class="benefit-text"><strong>Professional email integration</strong> with your existing accounts</p>
+        </div>
+      </div>
+      
+      <div class="plans-section">
+        <div class="plans-header">
+          <h3>Choose Your Perfect Plan</h3>
+          <p>Select the plan that fits your business size and needs</p>
+        </div>
+        
+        <div class="plan">
+          <div class="plan-header">
+            <h4 class="plan-name">Starter</h4>
+            <p class="plan-price">$29/mo</p>
+          </div>
+          <p class="plan-features">1 store connection • 500 automations/month • Email support</p>
+        </div>
+        
+        <div class="plan popular">
+          <div class="plan-header">
+            <h4 class="plan-name">Growth</h4>
+            <p class="plan-price">$79/mo</p>
+          </div>
+          <p class="plan-features">3 store connections • 2,000 automations/month • Priority support</p>
+        </div>
+        
+        <div class="plan">
+          <div class="plan-header">
+            <h4 class="plan-name">Scale</h4>
+            <p class="plan-price">$199/mo</p>
+          </div>
+          <p class="plan-features">10 store connections • 10,000 automations/month • Dedicated manager</p>
+        </div>
+      </div>
+      
+      <div class="cta-section">
+        <p class="cta-text">Secure your plan now to maintain uninterrupted service</p>
+        <a href="{{planSelectionUrl}}" class="cta-button">Choose Your Plan</a>
+      </div>
+      
+      <p style="color: #6b7280; font-size: 14px; line-height: 1.6; margin: 24px 0 0 0; text-align: center;">
+        Questions? Reply to this email or visit our <a href="https://delightdesk.io/support" style="color: #8b5cf6;">help center</a>.
+      </p>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      <p><strong>Delight Desk</strong></p>
+      <p>The AI-powered customer service automation platform trusted by thousands of e-commerce businesses worldwide.</p>
+      
+      <div class="footer-links">
+        <a href="{{planSelectionUrl}}">Choose Plan</a>
+        <a href="{{dashboardUrl}}">Dashboard</a>
+        <a href="{{supportUrl}}">Support</a>
+      </div>
+      
+      <p style="margin-top: 16px; font-size: 12px;">
+        You're receiving this because you started a free trial with Delight Desk.<br>
+        <a href="{{unsubscribeUrl}}" style="color: #8b5cf6;">Unsubscribe</a> | 
+        <a href="{{preferencesUrl}}" style="color: #8b5cf6;">Email Preferences</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
