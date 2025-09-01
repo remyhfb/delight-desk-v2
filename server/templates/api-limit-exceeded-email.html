@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Trial API Limit Reached</title>
+    <style>
+        /* Mobile-first design using tables for maximum compatibility */
+        * { margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.6; 
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .header { 
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .header h1 { 
+            color: white; 
+            font-size: 24px; 
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .header p { 
+            color: rgba(255,255,255,0.9); 
+            font-size: 16px;
+        }
+        .content { 
+            padding: 32px 24px;
+        }
+        .alert-box {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        .alert-icon {
+            color: #d97706;
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        .button { 
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 16px 0;
+            text-align: center;
+        }
+        .button:hover { 
+            background: #d97706;
+        }
+        .features {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+        .features h3 {
+            color: #1f2937;
+            margin-bottom: 12px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 4px 0;
+            color: #6b7280;
+        }
+        .feature-list li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .footer { 
+            background: #f8f9fa;
+            padding: 24px;
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        @media only screen and (max-width: 600px) {
+            .container { margin: 0; border-radius: 0; }
+            .content { padding: 24px 16px; }
+            .header { padding: 24px 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚡ Free Trial Limit Reached</h1>
+            <p>Your trial usage has reached its daily limit</p>
+        </div>
+        
+        <div class="content">
+            <div class="alert-box">
+                <span class="alert-icon">⚠️</span>
+                <strong>Order Status Automation Temporarily Paused</strong>
+                <br><br>
+                You've reached your daily limit of <strong>{{dailyLimit}} AfterShip API calls</strong> during your free trial. 
+                Your order status automation will resume tomorrow, or you can upgrade now for unlimited usage.
+            </div>
+
+            <p>Hi {{firstName}},</p>
+            
+            <p>Your free trial is working great! However, you've reached the daily limit for order tracking API calls. This helps us manage costs while you explore the platform.</p>
+
+            <p><strong>What's still available:</strong></p>
+            <ul>
+                <li>✅ Email processing and classification</li>
+                <li>✅ Manual order lookups</li>
+                <li>✅ Quick Actions</li>
+                <li>✅ All other automation features</li>
+            </ul>
+
+            <p><strong>What's paused until tomorrow:</strong></p>
+            <ul>
+                <li>🔄 Automatic order status updates with tracking info</li>
+                <li>🔄 AI delivery predictions</li>
+            </ul>
+
+            <div class="features">
+                <h3>🚀 Upgrade for Unlimited Usage</h3>
+                <ul class="feature-list">
+                    <li>Unlimited order tracking API calls</li>
+                    <li>Unlimited AI response generation</li>
+                    <li>Priority customer support</li>
+                    <li>Comprehensive time-saved tracking</li>
+                    <li>Custom automation rules</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin: 32px 0;">
+                <a href="{{upgradeUrl}}" class="button">⚡ Upgrade Your Plan</a>
+            </div>
+
+            <p>Your current usage:</p>
+            <ul>
+                <li><strong>Today:</strong> {{dailyCount}}/{{dailyLimit}} API calls</li>
+                <li><strong>This month:</strong> {{monthlyCount}}/{{monthlyLimit}} API calls</li>
+            </ul>
+
+            <p>Questions? Just reply to this email and I'll help you choose the right plan for your business.</p>
+
+            <p>Best regards,<br>
+            <strong>Remy</strong><br>
+            Founder, Delight Desk</p>
+        </div>
+        
+        <div class="footer">
+            <p>This is an automated message from your Delight Desk trial account.</p>
+            <p>© 2025 Delight Desk. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
